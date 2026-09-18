@@ -105,6 +105,38 @@ protected:
     // ---------- helpers ----------
     bool outOfMoney() const { return GameState::Wallet <= 0; }
 
+    gui::Rect getTableRect(const gui::Rect& rect) const
+    {
+        const float TABLE_ASPECT = 1536.0f / 1024.0f; // 1.5
+
+        int availableW = (int)rect.width();
+        int availableH = (int)rect.height();
+
+        int tableW;
+        int tableH;
+
+        if ((float)availableW / availableH > TABLE_ASPECT)
+        {
+            // Window is wider than the image -> bars left/right
+            tableH = availableH;
+            tableW = (int)std::round(tableH * TABLE_ASPECT);
+        }
+        else
+        {
+            // Window is taller than the image -> bars top/bottom
+            tableW = availableW;
+            tableH = (int)std::round(tableW / TABLE_ASPECT);
+        }
+
+        int x = (availableW - tableW) / 2;
+        int y = (availableH - tableH) / 2;
+
+        return gui::Rect(
+            gui::Point(x, y),
+            gui::Size(tableW, tableH)
+        );
+    }
+
     bool canInteract() const
     {
         if (outOfMoney()) return false;
@@ -413,7 +445,10 @@ public:
         gui::Shape bg;
 
         gui::Size dealersHandSz(140, 30);
-        gui::Point dealersHandPt((int)((rect.width() - rect.width() / 3.5) / 2 - dealersHandSz.width / 2), 70);
+        gui::Point dealersHandPt(
+            rect.left + (int)((rect.width() - rect.width() / 3.5) / 2 - dealersHandSz.width / 2),
+            rect.top + 70
+        );
         gui::Rect dealersHandRect(dealersHandPt, dealersHandSz);
 
         bg.createRoundedRect(dealersHandRect, 5);
@@ -444,7 +479,10 @@ public:
         gui::Shape bg;
 
         gui::Size playerHandSz(120, 30);
-        gui::Point playersHandPt((int)((rect.width() - rect.width() / 3.5) / 2 - playerHandSz.width / 2), 330);
+        gui::Point playersHandPt(
+            rect.left + (int)((rect.width() - rect.width() / 3.5) / 2 - playerHandSz.width / 2),
+            rect.top + 330
+        );
         gui::Rect playerHandRect(playersHandPt, playerHandSz);
 
         bg.createRoundedRect(playerHandRect, 5);
@@ -474,8 +512,8 @@ public:
         // panel geometry
         const gui::Size boxSize(700, 420);
         const gui::Point boxPt(
-            (int)rect.width() / 2 - boxSize.width / 2,
-            (int)rect.height() / 2 - boxSize.height / 2
+            rect.left + (int)rect.width() / 2 - boxSize.width / 2,
+            rect.top + (int)rect.height() / 2 - boxSize.height / 2
         );
         const gui::Rect boxRect(boxPt, boxSize);
 
@@ -539,7 +577,7 @@ public:
 
         // TRY AGAIN
         const gui::Rect tryRect(
-            gui::Point((int)rect.width() / 2 - btnSize.width / 2, boxPt.y + 230),
+            gui::Point(rect.left + (int)rect.width() / 2 - btnSize.width / 2, boxPt.y + 230),
             btnSize
         );
         _tryAgainBtn = RectCordinates(tryRect.top, tryRect.bottom, tryRect.left, tryRect.right);
@@ -556,7 +594,7 @@ public:
 
         // GO BACK
         const gui::Rect backRect(
-            gui::Point((int)rect.width() / 2 - btnSize.width / 2, boxPt.y + 320),
+            gui::Point(rect.left + (int)rect.width() / 2 - btnSize.width / 2, boxPt.y + 320),
             btnSize
         );
         _goBackBtn = RectCordinates(backRect.top, backRect.bottom, backRect.left, backRect.right);
@@ -577,8 +615,8 @@ public:
         // panel geometry
         const gui::Size boxSize(780, 360);
         const gui::Point boxPt(
-            (int)rect.width() / 2 - boxSize.width / 2,
-            (int)rect.height() / 2 - boxSize.height / 2
+            rect.left + (int)rect.width() / 2 - boxSize.width / 2,
+            rect.top + (int)rect.height() / 2 - boxSize.height / 2
         );
         const gui::Rect boxRect(boxPt, boxSize);
 
@@ -625,7 +663,7 @@ public:
         // button
         const gui::Size btnSize(520, 74);
         const gui::Rect backRect(
-            gui::Point((int)rect.width() / 2 - btnSize.width / 2, boxPt.y + 255),
+            gui::Point(rect.left + (int)rect.width() / 2 - btnSize.width / 2, boxPt.y + 255),
             btnSize
         );
 
@@ -645,7 +683,10 @@ public:
     void drawAdvisor(const gui::Rect& rect)
     {
         gui::Size advisorSize(140, 180);
-        gui::Point advisorPt((int)rect.width() - advisorSize.width - 40, (int)rect.height() - advisorSize.height - 150);
+        gui::Point advisorPt(
+            rect.left + (int)rect.width() - advisorSize.width - 40,
+            rect.top + (int)rect.height() - advisorSize.height - 150
+        );
         gui::Rect advisorRect(advisorPt, advisorSize);
 
         gui::Image advisorImg(":advisor");
@@ -718,8 +759,8 @@ public:
             sideBtn +
             padX;
 
-        int barX = w / 2 - neededW / 2;
-        int barY = h - barH - margin;
+        int barX = rect.left + w / 2 - neededW / 2;
+        int barY = rect.top + h - barH - margin;
 
         gui::Rect barRect(gui::Point(barX, barY), gui::Size(neededW, barH));
 
@@ -790,11 +831,11 @@ public:
         int btnW = 220;
         int btnH = 70;
         int rightMargin = 150;
-        int topY = (int)rect.height() / 2 - 200;
+        int topY = rect.top + (int)rect.height() / 2 - 200;
 
         bool enabled = (!outOfMoney() && !game.isGameDone());
 
-        gui::Rect hitRect(gui::Point((int)rect.width() - rightMargin - btnW, topY),
+        gui::Rect hitRect(gui::Point(rect.left + (int)rect.width() - rightMargin - btnW, topY),
             gui::Size(btnW, btnH));
         _hitBtn = RectCordinates(hitRect.top, hitRect.bottom, hitRect.left, hitRect.right);
 
@@ -805,7 +846,7 @@ public:
             td::ColorID::Gold, td::ColorID::Yellow,
             td::ColorID::White, td::ColorID::Gray);
 
-        gui::Rect standRect(gui::Point((int)rect.width() - rightMargin - btnW, topY + btnH + 25),
+        gui::Rect standRect(gui::Point(rect.left + (int)rect.width() - rightMargin - btnW, topY + btnH + 25),
             gui::Size(btnW, btnH));
         _standBtn = RectCordinates(standRect.top, standRect.bottom, standRect.left, standRect.right);
 
@@ -819,31 +860,40 @@ public:
 
     void onDraw(const gui::Rect& rect) override
     {
+        // Black letterbox background
+        gui::Shape background;
+        background.createRect(rect);
+        background.drawFill(td::ColorID::Black);
+
+        // natID aspect-fits the 1536x1024 table image
         gui::Image bgImg(":blackjacktable");
         bgImg.draw(rect);
+
+        // Calculate the same area occupied by the image
+        gui::Rect tableRect = getTableRect(rect);
 
         drawTopLeftBackButton(rect);
 
         applyPayoutIfNeeded();
 
-        drawDealer(rect);
-        drawPlayer(rect);
+        drawDealer(tableRect);
+        drawPlayer(tableRect);
 
-        drawHitStandRight(rect);
-        drawBetUI(rect);
+        drawHitStandRight(tableRect);
+        drawBetUI(tableRect);
 
         if (game.isGameDone())
-            drawWinner(rect);
+            drawWinner(tableRect);
         else {
             _tryAgainBtn = RectCordinates(-1, -1, -1, -1);
             _goBackBtn = RectCordinates(-1, -1, -1, -1);
         }
 
-        drawAdvisor(rect);
+        drawAdvisor(tableRect);
         _showAdvisorTip = false;
 
         if (outOfMoney())
-            drawNoMoneyPopup(rect);
+            drawNoMoneyPopup(tableRect);
     }
 
     void onPrimaryButtonPressed(const gui::InputDevice& inputDevice) override
