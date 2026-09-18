@@ -11,7 +11,6 @@
 \usepackage{listings}
 \usepackage{algorithm}
 \usepackage{algpseudocode}
-\usepackage{caption}
 
 \hypersetup{
   colorlinks=true,
@@ -28,11 +27,16 @@
   showstringspaces=false
 }
 
-\title{Pizzo: A Gamified Chinese Postman Route Planner with a Blackjack Mini-game}
+\title{Pizzo: A Gamified Route-Planning Application Combining the Chinese Postman Problem and Blackjack Decision Support}
 
-\author{\IEEEauthorblockN{Tarik Agi\'c}
-\IEEEauthorblockA{Project Description (Artifical Intelligence)\\
-Student ID: 20108}
+\author{
+\IEEEauthorblockN{Tarik Agi\'c}
+\IEEEauthorblockA{
+Faculty of Electrical Engineering, University of Sarajevo\\
+Sarajevo, Bosnia and Herzegovina\\
+Student ID: 20108\\
+Course: Artificial Intelligence
+}
 }
 
 \begin{document}
@@ -42,13 +46,13 @@ Student ID: 20108}
 \emph{Pizzo} is an interactive desktop application that combines a graph-optimization task with a probabilistic decision-making mini-game.
 In the narrative framing, ``pizzo'' refers to protection money collected by an Italian mafia capo.
 If a city is modeled as a weighted, connected, undirected graph where intersections are vertices and streets are edges, then Toni must traverse the city to visit every business located along the streets.
-To minimize fuel cost and exposure risk, Toni seeks the shortest closed walk that covers every street at least once---the \emph{Chinese Postman Problem} (CPP)~\cite{ref_cpp_wiki,ref_mit_urban}.
+To minimize fuel cost and exposure risk, Toni seeks the shortest closed walk that covers every street at least once---the \emph{Chinese Postman Problem} (CPP)~\cite{ref_mit_urban}.
 After a long day of collecting pizzo, Toni relaxes by playing Blackjack (``21''), trying to increase his bankroll.
 The Blackjack module includes an \emph{Advisor} (``Consigliere'') that computes the expected value (EV) of \textsc{Hit} versus \textsc{Stand} under an infinite-deck probability model, and recommends the statistically best action.
 \end{abstract}
 
 \begin{IEEEkeywords}
-Chinese Postman Problem, Euler circuit, Dijkstra, minimum perfect matching, Hierholzer, Blackjack, expectimax, expected value, GUI.
+Chinese Postman Problem, graph optimization, Dijkstra's algorithm, minimum-weight perfect matching, Euler circuit, Blackjack, expectimax, expected value.
 \end{IEEEkeywords}
 
 \section{Introduction}
@@ -82,7 +86,7 @@ Vertices of odd degree are central to CPP: if any vertex has odd degree, then no
 The CPP solution is therefore ``Eulerization'': duplicating a set of edges (or paths) so that all degrees become even, enabling an Euler circuit in an augmented multigraph.
 
 \subsection{Chinese Postman Problem (CPP)}
-The undirected CPP asks for the minimum-cost closed walk that traverses every edge at least once~\cite{ref_cpp_wiki,ref_mit_urban}.
+The undirected CPP asks for the minimum-cost closed walk that traverses every edge at least once~\cite{ref_mit_urban}.
 For undirected graphs, a classical solution pipeline is:
 \begin{enumerate}
     \item Compute all odd-degree vertices.
@@ -159,7 +163,7 @@ Pine Barrens   & 8  & 8  & 40  & 4 \\
 \end{table}
 
 \subsection{Automatic Node Layout in the GUI}
-A ``script''-like automatic drawing routine exists directly in the GUI code.
+An automatic node-layout routine is implemented directly in the GUI.
 After a neighborhood is loaded, the GUI computes positions for all vertices by placing them evenly on a circle:
 for each vertex index $i\in\{0,\dots,N-1\}$, an angle
 \[
@@ -369,8 +373,30 @@ The Blackjack window renders:
   \item A back button to close the window and return to the main mode.
 \end{itemize}
 
-\subsection{Screenshots}
-Figures~\ref{fig:main} and~\ref{fig:bj} show the application in both modes.
+\section{Conclusion}
+\emph{Pizzo} demonstrates an end-to-end application that connects deterministic graph optimization (CPP) with stochastic decision-making (Blackjack).
+The CPP mode implements the classical undirected CPP pipeline using Dijkstra shortest paths, minimum perfect matching of odd vertices, graph Eulerization, and a Hierholzer-style Euler circuit routine.
+The Blackjack mode provides a playable mini-game that shares a wallet with the CPP traversal and includes a mathematically grounded EV-based Advisor.
+Together, the system illustrates core algorithmic concepts (odd vertices, Euler circuits, shortest paths, matchings) and AI concepts (expectimax-style evaluation under chance) within a cohesive interactive narrative.
+
+\bibliographystyle{IEEEtran}
+\begin{thebibliography}{1}
+
+\bibitem{ref_mit_urban}
+MIT, \emph{Urban Operations Research}, ``Section 6.4.2.'' [Online]. Available: \url{https://web.mit.edu/urban_or_book/www/book/chapter6/6.4.2.html}. Accessed: 2026-02-16.
+
+\bibitem{ref_euler_mathworld}
+Wolfram MathWorld, ``Eulerian cycle.'' [Online]. Available: \url{https://mathworld.wolfram.com/EulerianCycle.html}. Accessed: 2026-02-16.
+
+\bibitem{ref_hierholzer}
+TUM Algorithms, ``Hierholzer's algorithm.'' [Online]. Available: \url{https://algorithms.discrete.ma.tum.de/graph-algorithms/hierholzer/index_en.html#}. Accessed: 2026-02-16.
+
+\end{thebibliography}
+
+\appendix
+\section{Application Screenshots}
+
+Figures~\ref{fig:main} and~\ref{fig:bj} show the two main application modes.
 
 \begin{figure*}[t]
 \centering
@@ -385,28 +411,5 @@ Figures~\ref{fig:main} and~\ref{fig:bj} show the application in both modes.
 \caption{Blackjack mode: dealer and player hands, \textsc{Hit}/\textsc{Stand} actions, bankroll and bet controls, and integration with shared wallet.}
 \label{fig:bj}
 \end{figure*}
-
-\section{Conclusion}
-\emph{Pizzo} demonstrates an end-to-end application that connects deterministic graph optimization (CPP) with stochastic decision-making (Blackjack).
-The CPP mode implements the classical undirected CPP pipeline using Dijkstra shortest paths, minimum perfect matching of odd vertices, graph Eulerization, and a Hierholzer-style Euler circuit routine.
-The Blackjack mode provides a playable mini-game that shares a wallet with the CPP traversal and includes a mathematically grounded EV-based Advisor.
-Together, the system illustrates core algorithmic concepts (odd vertices, Euler circuits, shortest paths, matchings) and AI concepts (expectimax-style evaluation under chance) within a cohesive interactive narrative.
-
-\bibliographystyle{IEEEtran}
-\begin{thebibliography}{1}
-
-\bibitem{ref_cpp_wiki}
-Wikipedia, ``Chinese postman problem.'' [Online]. Available: \url{https://en.wikipedia.org/wiki/Chinese_postman_problem}. Accessed: 2026-02-16.
-
-\bibitem{ref_mit_urban}
-MIT, \emph{Urban Operations Research}, ``Section 6.4.2.'' [Online]. Available: \url{https://web.mit.edu/urban_or_book/www/book/chapter6/6.4.2.html}. Accessed: 2026-02-16.
-
-\bibitem{ref_euler_mathworld}
-Wolfram MathWorld, ``Eulerian cycle.'' [Online]. Available: \url{https://mathworld.wolfram.com/EulerianCycle.html}. Accessed: 2026-02-16.
-
-\bibitem{ref_hierholzer}
-TUM Algorithms, ``Hierholzer's algorithm.'' [Online]. Available: \url{https://algorithms.discrete.ma.tum.de/graph-algorithms/hierholzer/index_en.html#}. Accessed: 2026-02-16.
-
-\end{thebibliography}
 
 \end{document}
