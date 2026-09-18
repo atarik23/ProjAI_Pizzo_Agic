@@ -1,4 +1,4 @@
-# natid-pizzo
+# ProjAI_Pizzo_Agic
 
 Course project for **Artificial Intelligence**.
 
@@ -21,7 +21,7 @@ Pizzo is a gamified route-planning application built with the natID framework. I
 ## Repository structure
 
 ```text
-natid-pizzo/
+ProjAI_Pizzo_Agic/
 ├── Docs/
 │   ├── Images/
 │   ├── Pizzo_LatexSourceCode.tex
