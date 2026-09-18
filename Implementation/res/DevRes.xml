@@ -1,0 +1,22 @@
+<?xml version='1.0'?>
+<DevRes version="1.1.0"
+        regionals="Common/Regionals"
+        displayName="Pizzo"
+        maintainer="Tarik Agić"
+        majorVersion="1"
+        minorVersion="1"
+        versionDate="2026-09-18"
+        comment="Gamified Chinese Postman route planner with a Blackjack mini-game.">
+    <Langs>
+        <Lang id="EN" name="English"/>
+        <Lang id="BA" name="Bosanski"/>
+    </Langs>
+    <ArtWork>
+        <Config path="Common/ResConfigs/natGUI.xml"/>
+        <Config path=":main.xml"/>
+    </ArtWork>
+    <Translation>
+        <Config path="Common/ResConfigs/tr/%s/natGUI.xml"/>
+        <Config path=":tr/%s/main.xml"/>
+    </Translation>
+</DevRes>

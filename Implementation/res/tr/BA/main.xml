@@ -1,0 +1,8 @@
+<?xml version='1.0'?>
+<DevRes>
+    <Translations>
+        <Res id="appTitle" tr="Pizzo"/>
+        <Res id="blackjackTitle" tr="Blackjack"/>
+    </Translations>
+</DevRes>
+

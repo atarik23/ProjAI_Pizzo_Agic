@@ -1,0 +1,49 @@
+# IDE settings
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# CMake and generated build directories
+build/
+out/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+*.sln
+*.vcxproj
+*.vcxproj.filters
+
+# Build configurations
+Debug/
+Release/
+RelWithDebInfo/
+MinSizeRel/
+
+# Compiled output
+*.obj
+*.o
+*.exe
+*.dll
+*.lib
+*.exp
+*.ilk
+*.pdb
+
+# LaTeX intermediate files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
+*.toc
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+desktop.ini

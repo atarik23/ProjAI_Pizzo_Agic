@@ -1,0 +1,11 @@
+# LittleItaly (Simple)
+V 6
+LABELS SAT BNG PIZ STR DOC HME
+E 0 1 2
+E 1 2 3
+E 2 3 2
+E 3 4 4
+E 4 5 3
+E 5 0 5
+E 1 4 7
+E 2 5 6

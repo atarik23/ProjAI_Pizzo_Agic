@@ -1,0 +1,101 @@
+<?xml version='1.0'?>
+<DevRes>
+	<Images>
+		<!-- TWO -->
+		<Res id="2_of_clubs" path=":cards/2_of_clubs.png"/>
+		<Res id="2_of_diamonds" path=":cards/2_of_diamonds.png"/>
+		<Res id="2_of_hearts" path=":cards/2_of_hearts.png"/>
+		<Res id="2_of_spades" path=":cards/2_of_spades.png"/>
+
+		<!-- THREE -->
+		<Res id="3_of_clubs" path=":cards/3_of_clubs.png"/>
+		<Res id="3_of_diamonds" path=":cards/3_of_diamonds.png"/>
+		<Res id="3_of_hearts" path=":cards/3_of_hearts.png"/>
+		<Res id="3_of_spades" path=":cards/3_of_spades.png"/>
+
+		<!-- FOUR -->
+		<Res id="4_of_clubs" path=":cards/4_of_clubs.png"/>
+		<Res id="4_of_diamonds" path=":cards/4_of_diamonds.png"/>
+		<Res id="4_of_hearts" path=":cards/4_of_hearts.png"/>
+		<Res id="4_of_spades" path=":cards/4_of_spades.png"/>
+
+		<!-- FIVE -->
+		<Res id="5_of_clubs" path=":cards/5_of_clubs.png"/>
+		<Res id="5_of_diamonds" path=":cards/5_of_diamonds.png"/>
+		<Res id="5_of_hearts" path=":cards/5_of_hearts.png"/>
+		<Res id="5_of_spades" path=":cards/5_of_spades.png"/>
+
+		<!-- SIX -->
+		<Res id="6_of_clubs" path=":cards/6_of_clubs.png"/>
+		<Res id="6_of_diamonds" path=":cards/6_of_diamonds.png"/>
+		<Res id="6_of_hearts" path=":cards/6_of_hearts.png"/>
+		<Res id="6_of_spades" path=":cards/6_of_spades.png"/>
+
+		<!-- SEVEN -->
+		<Res id="7_of_clubs" path=":cards/7_of_clubs.png"/>
+		<Res id="7_of_diamonds" path=":cards/7_of_diamonds.png"/>
+		<Res id="7_of_hearts" path=":cards/7_of_hearts.png"/>
+		<Res id="7_of_spades" path=":cards/7_of_spades.png"/>
+
+		<!-- EIGHT -->
+		<Res id="8_of_clubs" path=":cards/8_of_clubs.png"/>
+		<Res id="8_of_diamonds" path=":cards/8_of_diamonds.png"/>
+		<Res id="8_of_hearts" path=":cards/8_of_hearts.png"/>
+		<Res id="8_of_spades" path=":cards/8_of_spades.png"/>
+
+		<!-- NINE -->
+		<Res id="9_of_clubs" path=":cards/9_of_clubs.png"/>
+		<Res id="9_of_diamonds" path=":cards/9_of_diamonds.png"/>
+		<Res id="9_of_hearts" path=":cards/9_of_hearts.png"/>
+		<Res id="9_of_spades" path=":cards/9_of_spades.png"/>
+
+		<!-- TEN -->
+		<Res id="10_of_clubs" path=":cards/10_of_clubs.png"/>
+		<Res id="10_of_diamonds" path=":cards/10_of_diamonds.png"/>
+		<Res id="10_of_hearts" path=":cards/10_of_hearts.png"/>
+		<Res id="10_of_spades" path=":cards/10_of_spades.png"/>
+
+		<!-- JACK -->
+		<Res id="jack_of_clubs2" path=":cards/jack_of_clubs2.png"/>
+		<Res id="jack_of_diamonds2" path=":cards/jack_of_diamonds2.png"/>
+		<Res id="jack_of_hearts2" path=":cards/jack_of_hearts2.png"/>
+		<Res id="jack_of_spades2" path=":cards/jack_of_spades2.png"/>
+
+		<!-- QUEEN -->
+		<Res id="queen_of_clubs2" path=":cards/queen_of_clubs2.png"/>
+		<Res id="queen_of_diamonds2" path=":cards/queen_of_diamonds2.png"/>
+		<Res id="queen_of_hearts2" path=":cards/queen_of_hearts2.png"/>
+		<Res id="queen_of_spades2" path=":cards/queen_of_spades2.png"/>
+
+		<!-- KING -->
+		<Res id="king_of_clubs2" path=":cards/king_of_clubs2.png"/>
+		<Res id="king_of_diamonds2" path=":cards/king_of_diamonds2.png"/>
+		<Res id="king_of_hearts2" path=":cards/king_of_hearts2.png"/>
+		<Res id="king_of_spades2" path=":cards/king_of_spades2.png"/>
+
+		<!-- ACE -->
+		<Res id="ace_of_clubs" path=":cards/ace_of_clubs.png"/>
+		<Res id="ace_of_diamonds" path=":cards/ace_of_diamonds.png"/>
+		<Res id="ace_of_hearts" path=":cards/ace_of_hearts.png"/>
+		<Res id="ace_of_spades" path=":cards/ace_of_spades.png"/>
+
+		<Res id="advisor" path = ":assets/advisor.png"/>
+		<Res id="toni" path = ":assets/toni.png"/>
+		<Res id="background" path = ":assets/background.png"/>
+		<Res id="blackjacktable" path = ":assets/blackjacktable.png"/>
+
+		<Res id="back" path=":cards/back.png"/>
+		
+	</Images>
+	<Sounds>
+		<Res id="traversal" path=":assets/Traversal.wav"/>
+		<Res id="tryagain" path=":assets/TryAgain.wav"/>
+		<Res id="win" path=":assets/Win.wav"/>
+	</Sounds>
+	<Texts>
+		<Res id="neigh1" path=":neighborhoods/neighborhood1.txt"/>
+		<Res id="neigh2" path=":neighborhoods/neighborhood2.txt"/>
+		<Res id="neigh3" path=":neighborhoods/neighborhood3.txt"/>
+	</Texts>
+</DevRes>
+

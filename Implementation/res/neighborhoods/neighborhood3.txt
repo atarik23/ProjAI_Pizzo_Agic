@@ -1,0 +1,11 @@
+# PNB (Pine Barrens) - sparse ladder + expensive bridge
+V 8
+LABELS CAB SNW RD1 RD2 STL TRL CAR RES
+E 0 1 3
+E 1 2 4
+E 2 3 3
+E 3 4 5
+E 4 5 4
+E 5 6 6
+E 6 7 3
+E 1 6 12
