@@ -62,13 +62,13 @@ A different SDK location can be supplied with the CMake variable `NATID_SDK_ROOT
 Place the repository at:
 
 ```text
-%USERPROFILE%\natid-pizzo
+%USERPROFILE%\ProjAI_Pizzo_Agic
 ```
 
 Configure a Visual Studio 2022 x64 build:
 
 ```bat
-cmake -S "%USERPROFILE%\natid-pizzo\Implementation" -B "%USERPROFILE%\natID.RAMDisk\build\Pizzo" -G "Visual Studio 17 2022" -A x64
+cmake -S "%USERPROFILE%\ProjAI_Pizzo_Agic\Implementation" -B "%USERPROFILE%\natID.RAMDisk\build\Pizzo" -G "Visual Studio 17 2022" -A x64
 ```
 
 Build the Debug configuration:
@@ -88,18 +88,18 @@ set "PATH=%USERPROFILE%\natID.SDK\bin;%USERPROFILE%\natID.SDK\bin\GTK;%PATH%"
 Run Pizzo with its development resources:
 
 ```bat
-"%USERPROFILE%\natID.RAMDisk\Out\Pizzo\Debug\Pizzo.exe" "-devResPath=%USERPROFILE%\natid-pizzo\Implementation"
+"%USERPROFILE%\natID.RAMDisk\Out\Pizzo\Debug\Pizzo.exe" "-devResPath=%USERPROFILE%\ProjAI_Pizzo_Agic\Implementation"
 ```
 
 To launch it without keeping the CMD window occupied:
 
 ```bat
-start "" "%USERPROFILE%\natID.RAMDisk\Out\Pizzo\Debug\Pizzo.exe" "-devResPath=%USERPROFILE%\natid-pizzo\Implementation"
+start "" "%USERPROFILE%\natID.RAMDisk\Out\Pizzo\Debug\Pizzo.exe" "-devResPath=%USERPROFILE%\ProjAI_Pizzo_Agic\Implementation"
 ```
 
 ## Building with CMake GUI (Windows)
 
-1. Set **Where is the source code** to `C:/Users/<username>/natid-pizzo/Implementation`.
+1. Set **Where is the source code** to `C:/Users/<username>/ProjAI_Pizzo_Agic/Implementation`.
 2. Set **Where to build the binaries** to `C:/Users/<username>/natID.RAMDisk/build/Pizzo`.
 3. Select **Configure**.
 4. Choose `Visual Studio 17 2022` and the `x64` platform.

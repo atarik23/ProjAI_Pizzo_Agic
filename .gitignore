@@ -7,6 +7,7 @@
 
 # CMake and generated build directories
 build/
+**/build/
 out/
 CMakeFiles/
 CMakeCache.txt
