@@ -45,11 +45,9 @@ The graph must be connected for the Chinese Postman solver to produce a route co
 
 ## Prerequisites
 
-- Windows 10 or Windows 11;
-- Visual Studio 2022 with **Desktop development with C++**;
 - CMake 3.18 or newer;
 - natID SDK 4.2.1;
-- 64-bit build configuration.
+- a compatible C++ development environment.
 
 By default, the SDK is expected at:
 
@@ -59,7 +57,7 @@ By default, the SDK is expected at:
 
 A different SDK location can be supplied with the CMake variable `NATID_SDK_ROOT`.
 
-## Command-line build
+## Command-line build (Windows)
 
 Place the repository at:
 
@@ -99,7 +97,7 @@ To launch it without keeping the CMD window occupied:
 start "" "%USERPROFILE%\natID.RAMDisk\Out\Pizzo\Debug\Pizzo.exe" "-devResPath=%USERPROFILE%\natid-pizzo\Implementation"
 ```
 
-## Building with CMake GUI
+## Building with CMake GUI (Windows)
 
 1. Set **Where is the source code** to `C:/Users/<username>/natid-pizzo/Implementation`.
 2. Set **Where to build the binaries** to `C:/Users/<username>/natID.RAMDisk/build/Pizzo`.
